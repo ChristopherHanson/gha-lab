@@ -1,6 +1,8 @@
 name: deploy-to-k8ss
 
 on:
+  push:
+
   workflow_dispatch:
     inputs:                 # Add the inputs block to the trigger
       environment:
