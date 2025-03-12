@@ -2,6 +2,8 @@ name: deploy-to-k8ss
 
 on:
   push:
+    tags:
+    - '[0-9]+.[0-9]+.[0-9]+'
 
   workflow_dispatch:
     inputs:                 # Add the inputs block to the trigger
