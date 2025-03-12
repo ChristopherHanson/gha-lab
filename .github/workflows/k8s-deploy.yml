@@ -56,7 +56,7 @@ jobs:
           manifests: |
               manifests/dep.yaml
               manifests/svc.yaml
-          namespace: developement
+          namespace: dev
           pull-images: false
 
   production:
