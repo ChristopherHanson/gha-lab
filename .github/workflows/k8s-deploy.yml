@@ -16,7 +16,7 @@ on:
 
 jobs:
   development:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && github.ref_type != 'tag'  # Runs only in development
+    if: github.ref == 'refs/heads/master' && !startsWith(github.ref, 'refs/tags/')  # Runs only in development
     permissions:             # Add the permissions key and its children required by the Deploy to Kubernetes cluster action
       actions: read
       contents: read
@@ -60,7 +60,7 @@ jobs:
           pull-images: false
 
   production:
-    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')     # Runs only on semantic version tags
+    if: startsWith(github.ref, 'refs/tags/v')     # Runs only on semantic version tags
     permissions:             # Add the permissions key and its children required by the Deploy to Kubernetes cluster action
       actions: read
       contents: read
