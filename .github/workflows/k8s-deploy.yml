@@ -100,5 +100,5 @@ jobs:
           manifests: |
               manifests/dep.yaml
               manifests/svc.yaml
-          namespace: production
+          namespace: prod
           pull-images: false 
